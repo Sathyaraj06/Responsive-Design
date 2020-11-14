@@ -6,13 +6,13 @@ This Project is a Proof of concept for Responsive design including Desktop and M
 
 UX design : https://dribbble.com/shots/6089302-Uber-Eats-Order-Food-Online
 
-#Desktop View 
+## Desktop View 
 
 <p align="center">
   <img alt="DesktopView" title="DesktopView" src="https://mycloudstorage.netlify.app/assets/ubereats/DesktopView.png">
 </p>
 
-#Mobile View
+## Mobile View
 <p align="center">
   <img width="60%" alt="MobileView" title="MobileView" src="https://mycloudstorage.netlify.app/assets/ubereats/MobileView.png">
 </p>
