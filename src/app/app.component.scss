@@ -1,0 +1,16 @@
+$screen-mob-max: 869.1px;
+
+.main{
+    width: 90%;
+}
+
+@media (max-width: $screen-mob-max) {
+    .main{
+       width: 100%;
+       margin-right: initial !important;
+       margin-left: initial !important;
+       padding-left: 0 !important;
+       padding-right: 0 !important;
+    }
+
+}

@@ -1,0 +1,79 @@
+$screen-mob-max :869.1px;
+
+nav div a{
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none !important;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color: black;
+    font-size: 18px;
+}
+
+nav div a:hover, .is-active{
+    border-bottom: solid;
+    color: #ff2247 !important;
+    border-color: #ff2247;   
+}
+
+.border-bottom{
+    padding-bottom: 15px;
+}
+
+@media (min-width:870px) and (max-width:1000px)
+{
+    nav div a{
+        font-size: 16px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+@media (max-width: $screen-mob-max) {
+nav{
+    background-color: #edeff4;
+    padding-top: 10px;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+nav div{
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+nav div a:not(:first-child){
+    margin-left: 4vw;
+    margin-right: 4vw;
+    padding-left: 0vw;
+    padding-right: 0vw;
+}
+
+nav div a:first-child{
+    margin-left: 0vw;
+    margin-right: 4vw;
+    padding-left: 0vw;
+    padding-right: 0vw;
+}
+
+}
+
+@media (max-width: 600px) {
+    nav div a:not(:first-child){
+        margin-left: 0vw;
+        margin-right: 2vw;   
+        font-size: 16px; 
+    }
+
+    nav div a:first-child{
+        margin-left: 0vw;
+        margin-right: 2vw;
+        padding-left: 0vw;
+        padding-right: 0vw;
+        font-size: 16px;
+    }
+}

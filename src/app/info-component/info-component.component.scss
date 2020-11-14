@@ -1,0 +1,268 @@
+@import '../../custom.scss';
+
+.route{
+    height: 60px;
+    background-color: #edeff4;
+    border-radius: 30px;
+}
+
+.info img{
+    background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.thick-border{
+    border-width: 2px;
+    border-style: solid;
+    padding-right: 17px;
+    padding-left: 17px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.font-22{
+    font-size: 22px;
+}
+
+.p-heading{
+    margin-bottom: 0px !important;
+}
+
+.info-bordered{
+        height: 70px;
+        border-radius: 5px;
+        margin-left: 10px !important;
+}
+
+.info-bordered i{
+    padding-top: 4px;
+}
+
+.bg-love{
+    color:#FF2A4E;  
+}
+
+
+@media (min-width: 1100px) {
+    .info-bordered {
+        margin-left: 30px !important;
+    }
+}
+
+@media (min-width: 1300px) {
+.info-box{
+padding-top: 4vw !important;
+}
+}
+
+@media (min-width: 1001px) and (max-width: 1050px) { 
+    .info-bordered div{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+}
+
+@media (min-width: 1000px) and (max-width: 1075px) {
+    h4{
+        font-size: calc(14px + 0.5vw) !important;
+        line-height: calc(1.1em + 0.5vw);
+    }   
+}
+
+@media (min-width: 870px) and (max-width: 1000px) { 
+.route i{
+    padding-top: 4px !important;
+}
+
+.route{
+    height: 40px;
+}
+
+h4{
+    font-size: calc(14px + 0.5vw) !important;
+    line-height: calc(1.1em + 0.5vw);
+}
+
+.medias span{
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+}
+
+.info-item div div span{
+    font-size: 12px;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+
+.info-bordered div div span{
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+.info-item div div p{
+    padding-right: 2px !important;
+    padding-left: 2px !important;
+} 
+
+.info-bordered {
+ 
+ padding-right: 0px !important;
+ margin-right: 0px !important;
+ margin-left: 20px !important;
+ font-size: 12px;
+}
+
+.info-bordered div{
+    padding-left: 5px !important;
+    padding-right: 13px !important;
+}
+
+.info-box>div:nth-child(1), .info-box>div:nth-child(2), .info-box>div:nth-child(3){
+padding-top: 15px !important;
+}
+
+}
+
+@media (min-width: $screen-mob-max){
+    .info-bordered-mob, .mob-line{
+        display: none !important;
+    }
+}
+
+@media (max-width: $screen-mob-max) {
+.route, .info-bordered, .medias{
+    display: none !important;
+}
+
+.info{
+    width:88%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.info-box{
+    padding-top: 6vw !important;
+}
+
+.info-item div div span{
+    font-size: 20px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 10px;
+}
+
+.info-item>div:nth-child(2) div{
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+}
+
+.info-bordered-mob{
+    height: 70px;
+    border-radius: 5px;
+    width: 88%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.info-bordered-mob p {
+    font-size: 14px !important;
+    color: gray;
+}
+
+.info-item p{
+font-size: 18px;
+margin-bottom: 0px !important;
+}
+
+.info-bordered-mob i{
+padding-top: 4px;
+}
+
+.info-bordered-mob>div{
+    padding-left:0px !important;
+    padding-right:0px !important;
+    }
+
+h4{
+       font-size: calc(18px + 1vw) !important;
+       line-height: calc(1.3em + 0.5vw);
+}
+
+.info-item>div:first-child>div{
+    padding-left: 30px !important;
+}
+
+.info-item{
+    padding-right: 0px;
+}
+
+.info-box{
+    padding-left: 10px;
+}
+}
+
+@media (max-width: 767px){
+    .info-box{
+        padding-left: 0px;
+    }   
+}
+
+@media (max-width: 670px){
+     .info-item>div:nth-child(2) div{
+         padding-left: 1vw;
+         padding-right: 1vw;
+     }
+.info-item>div:first-child div{
+    padding-left: 20px !important;
+}
+     .info-box{
+        padding-left: 0px;
+    }   
+    
+    h4{
+        font-size: calc(14px + 1vw) !important;
+        line-height: calc(1.3em + 0.5vw);
+ }
+
+ .info-item p{
+    font-size: 16px;
+ }
+
+ .info-bordered-mob>div>div:first-child{
+font-size: 18px !important;
+ }
+
+ .info-bordered-mob span{
+     font-size: 18px !important;
+ }
+
+}
+
+
+@media (max-width: 540px){
+    .info-item>div:nth-child(2) div{
+        padding-left: 0vw;
+        padding-right: 0vw;
+    }
+    .info-item p{
+        font-size: 14px;
+    }
+
+    .info-item>div:nth-child(2){
+        padding-left: 2vw;
+    }
+
+}
+
+@media (max-width: 440px){
+    .info-item {
+        padding-left: 0.5rem !important;
+    }
+}
+
+
+

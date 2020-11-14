@@ -1,0 +1,39 @@
+$screen-mob-max :869.1px;
+
+@media (max-width: $screen-mob-max) {
+    .col-mob-12{
+        -webkit-box-flex: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-mob-9{
+    -webkit-box-flex: 0;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.col-mob-3{
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-mob-4{
+    -webkit-box-flex: 0;
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
+.col-mob-6{
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-mob-8{
+    -webkit-box-flex: 0;
+    flex: 0 0 66.333%;
+    max-width: 66.333%;
+}
+}

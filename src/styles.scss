@@ -1,0 +1,66 @@
+body{
+    background-color: #e4e8f3 !important;
+    font-size: calc(8px + 0.5vw) !important;
+    line-height: calc(1.1em + 0.5vw);
+    margin: .5em;
+}
+
+.font-weight-md{
+    font-weight: 500 !important;
+}
+.font-weight-600{
+    font-weight: 600 !important;
+}
+
+.bg-grey{
+    background-color: #e4e8f3 !important;
+}
+
+.bg-facebook{
+    background-color: #3b5998 !important;
+}
+
+.font-size-icon{
+    font-size: 20px !important;
+}
+
+.font-size-icon-lg{
+    font-size: 25px !important;
+}
+
+.font-size-icon-sm{
+    font-size: 15px !important;
+}
+
+.border-radius-4{
+    border-radius: 4px;
+}
+
+.border-radius-6{
+    border-radius: 6px;
+}
+
+.border-radius-8{
+    border-radius: 8px;
+}
+
+.text-grey{
+    color:grey;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+  }
+
+  .font-size-13{
+      font-size: 13px !important;
+  }
+
+  .line-100{
+    border: 0.5px solid  #edeff4;
+}
+
+.bg-linear-gradient-red{
+    background: linear-gradient(90deg, rgba(255,82,69,1) 0%, rgba(255,44,79,1) 100%);
+}
+
