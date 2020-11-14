@@ -1,6 +1,21 @@
 # Ubereats
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+Author: [Sathyaraj Kandasamy](https://sathya-me.netlify.app/)
+
+This Project is a Proof of concept for Responsive design including Desktop and Mobile view, using Angular 8.
+
+UX designs : https://dribbble.com/shots/6089302-Uber-Eats-Order-Food-Online (https://dribbble.com/shots/6089302-Uber-Eats-Order-Food-Online)
+
+#Desktop View 
+
+<p align="center">
+  <img width="600" height="800" alt="DesktopView" title="DesktopView" src="https://mycloudstorage.netlify.app/assets/ubereats/DesktopView.png">
+</p>
+
+#Mobile View
+<p align="center">
+  <img alt="MobileView" title="MobileView" src="https://mycloudstorage.netlify.app/assets/ubereats/MobileView.png">
+</p>
 
 ## Development server
 
