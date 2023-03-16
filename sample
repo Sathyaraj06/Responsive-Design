@@ -1,0 +1,116 @@
+Install-Package ECharts.Blazor
+
+@using ECharts.Blazor.Common
+@using ECharts.Blazor.Components
+
+// Define data for the Pareto chart
+var data = new double[] { 20, 50, 70, 90, 100 };
+
+// Calculate cumulative percentage
+double[] cumPercentages = new double[data.Length];
+cumPercentages[0] = data[0];
+for (int i = 1; i < data.Length; i++)
+{
+    cumPercentages[i] = cumPercentages[i - 1] + data[i];
+}
+
+for (int i = 0; i < cumPercentages.Length; i++)
+{
+    cumPercentages[i] /= cumPercentages[cumPercentages.Length - 1];
+}
+
+// Create an ECharts options object
+var options = new Option
+{
+    Title = new Title
+    {
+        Text = "Pareto Chart",
+        Subtext = "Demonstration of ECharts.Blazor",
+    },
+    Tooltip = new Tooltip
+    {
+        Trigger = Trigger.Axis,
+        AxisPointer = new AxisPointer
+        {
+            Type = AxisPointerType.Shadow,
+        }
+    },
+    Toolbox = new Toolbox
+    {
+        Show = true,
+        Feature = new Feature
+        {
+            SaveAsImage = new FeatureSaveAsImage { Show = true },
+        }
+    },
+    Grid = new Grid
+    {
+        Left = "3%",
+        Right = "4%",
+        Bottom = "3%",
+        ContainLabel = true,
+    },
+    XAxis = new List<XAxis>
+    {
+        new XAxis
+        {
+            Type = AxisType.Category,
+            BoundaryGap = true,
+            Data = new string[] { "A", "B", "C", "D", "E" },
+        }
+    },
+    YAxis = new List<YAxis>
+    {
+        new YAxis
+        {
+            Type = AxisType.Value,
+            Name = "Value",
+            AxisLabel = new AxisLabel
+            {
+                Formatter = "{value}",
+            },
+            AxisTick = new AxisTick
+            {
+                Inside = true,
+            },
+            SplitArea = new SplitArea
+            {
+                Show = true,
+            },
+        },
+        new YAxis
+        {
+            Type = AxisType.Value,
+            Name = "Cumulative Percentage",
+            AxisLabel = new AxisLabel
+            {
+                Formatter = "{value} %",
+            },
+            Max = 1,
+            AxisTick = new AxisTick
+            {
+                Inside = true,
+            },
+        }
+    },
+    Series = new List<SeriesBase>
+    {
+        new BarSeries
+        {
+            Name = "Value",
+            Type = ChartType.Bar,
+            Data = data,
+            ItemStyle = new ItemStyle
+            {
+                Color = "#2f4554",
+            },
+            BarMaxWidth = "50%",
+            Label = new Label
+            {
+                Show = true,
+                Position = LabelPosition.Top,
+            },
+        },
+        new LineSeries
+        {
+            Name = "Cumulative Percentage",
