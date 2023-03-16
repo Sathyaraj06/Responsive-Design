@@ -1,116 +1,61 @@
-Install-Package ECharts.Blazor
+using Allegiance.Blazor.Highcharts.ChartSeries;
+using Allegiance.Blazor.Highcharts.Models;
+using Allegiance.Blazor.Highcharts.Options;
+using Allegiance.Blazor.Highcharts.PlotOptions;
+using Allegiance.Blazor.Highcharts.Types;
 
-@using ECharts.Blazor.Common
-@using ECharts.Blazor.Components
+<HighchartsChart ChartType="ChartTypes.Pareto" Options="@ParetoChartOptions" />
 
-// Define data for the Pareto chart
-var data = new double[] { 20, 50, 70, 90, 100 };
+private ChartOptions ParetoChartOptions { get; set; }
 
-// Calculate cumulative percentage
-double[] cumPercentages = new double[data.Length];
-cumPercentages[0] = data[0];
-for (int i = 1; i < data.Length; i++)
+protected override async Task OnInitializedAsync()
 {
-    cumPercentages[i] = cumPercentages[i - 1] + data[i];
-}
-
-for (int i = 0; i < cumPercentages.Length; i++)
-{
-    cumPercentages[i] /= cumPercentages[cumPercentages.Length - 1];
-}
-
-// Create an ECharts options object
-var options = new Option
-{
-    Title = new Title
+    // Create the chart options
+    ParetoChartOptions = new ChartOptions
     {
-        Text = "Pareto Chart",
-        Subtext = "Demonstration of ECharts.Blazor",
-    },
-    Tooltip = new Tooltip
-    {
-        Trigger = Trigger.Axis,
-        AxisPointer = new AxisPointer
+        Title = new TitleOptions { Text = "Pareto Chart" },
+        XAxis = new[] { new XAxis { Categories = new[] { "Category 1", "Category 2", "Category 3", "Category 4", "Category 5" } } },
+        YAxis = new[]
         {
-            Type = AxisPointerType.Shadow,
-        }
-    },
-    Toolbox = new Toolbox
-    {
-        Show = true,
-        Feature = new Feature
-        {
-            SaveAsImage = new FeatureSaveAsImage { Show = true },
-        }
-    },
-    Grid = new Grid
-    {
-        Left = "3%",
-        Right = "4%",
-        Bottom = "3%",
-        ContainLabel = true,
-    },
-    XAxis = new List<XAxis>
-    {
-        new XAxis
-        {
-            Type = AxisType.Category,
-            BoundaryGap = true,
-            Data = new string[] { "A", "B", "C", "D", "E" },
-        }
-    },
-    YAxis = new List<YAxis>
-    {
-        new YAxis
-        {
-            Type = AxisType.Value,
-            Name = "Value",
-            AxisLabel = new AxisLabel
+            new YAxis
             {
-                Formatter = "{value}",
+                Title = new YAxisTitle { Text = "Cumulative Percentage" },
+                Labels = new YAxisLabels { Format = "{value}%" }
             },
-            AxisTick = new AxisTick
+            new YAxis
             {
-                Inside = true,
-            },
-            SplitArea = new SplitArea
-            {
-                Show = true,
-            },
+                Title = new YAxisTitle { Text = "Count" },
+                Opposite = true
+            }
         },
-        new YAxis
+        Tooltip = new TooltipOptions
         {
-            Type = AxisType.Value,
-            Name = "Cumulative Percentage",
-            AxisLabel = new AxisLabel
-            {
-                Formatter = "{value} %",
-            },
-            Max = 1,
-            AxisTick = new AxisTick
-            {
-                Inside = true,
-            },
+            Shared = true,
+            ValueSuffix = "%"
+        },
+        PlotOptions = new PlotOptionsOptions
+        {
+            Column = new ColumnPlotOptions { PointPadding = 0, BorderWidth = 0 }
         }
-    },
-    Series = new List<SeriesBase>
+    };
+
+    // Set the series data
+    ParetoChartOptions.Series = new[]
     {
-        new BarSeries
+        new ColumnSeries
         {
-            Name = "Value",
-            Type = ChartType.Bar,
-            Data = data,
-            ItemStyle = new ItemStyle
-            {
-                Color = "#2f4554",
-            },
-            BarMaxWidth = "50%",
-            Label = new Label
-            {
-                Show = true,
-                Position = LabelPosition.Top,
-            },
+            Name = "Count",
+            Data = new Data(new object[] { 10, 7, 5, 2, 1 })
         },
         new LineSeries
         {
             Name = "Cumulative Percentage",
+            YAxis = 1,
+            Data = new Data(new object[] { 50, 70, 85, 95, 100 }),
+            Marker = new LineSeriesMarker { Enabled = false },
+            Color = "#FF0000"
+        }
+    };
+}
+
+
